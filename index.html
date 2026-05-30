@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PULSE — Strength & Conditioning. A high-performance gym built for transformation. Calisthenics, weight loss, muscle gain, strength & more." />
+  <title>PULSE — Strength &amp; Conditioning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-mark">PULSE</div>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+      <div class="loader-percent"><span>0</span>%</div>
+      <div class="loader-tag">Strength &middot; Conditioning &middot; Transformation</div>
+    </div>
+  </div>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ========== AMBIENT 3D CANVAS ========== -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========== PROGRESS BAR ========== -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill"></div></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav">
+    <a href="#home" class="nav-brand" data-cursor="hover">
+      <span class="brand-pulse" aria-hidden="true"></span>
+      <span class="brand-word">PULSE</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#programs" data-cursor="hover">Programs</a>
+      <a href="#equipment" data-cursor="hover">Equipment</a>
+      <a href="#why" data-cursor="hover">Why Us</a>
+      <a href="#coaches" data-cursor="hover">Coaches</a>
+      <a href="#pricing" data-cursor="hover">Pricing</a>
+      <a href="#visit" data-cursor="hover">Visit</a>
+    </nav>
+    <div class="nav-right">
+      <button class="nav-theme" aria-label="Toggle theme" data-cursor="hover">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a href="#pricing" class="nav-cta" data-cursor="hover">
+        <span>Join now</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <button class="nav-burger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bgword" aria-hidden="true"><span>STRENGTH</span></div>
+
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="hero-eyebrow"><span class="live-dot"></span> Now enrolling — Summer 2026</span>
+        <span class="hero-divider"></span>
+        <span class="hero-eyebrow">Open 24 / 7</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span>Forge the</span></span>
+        <span class="line"><span>body you've</span></span>
+        <span class="line"><span><em>earned.</em></span></span>
+      </h1>
+
+      <p class="hero-sub">
+        A high-performance training floor built for real transformation — calisthenics, fat-loss,
+        muscle gain and raw strength. World-class coaches. Premium equipment. Zero excuses.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary" data-cursor="hover">
+          <span>Start your transformation</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#programs" class="btn btn-ghost" data-cursor="hover">
+          <span>Explore programs</span>
+        </a>
+      </div>
+
+      <div class="hero-quickstats">
+        <div class="qstat"><strong data-stat data-target="4200" data-suffix="+">0</strong><span>Members trained</span></div>
+        <div class="qstat"><strong data-stat data-target="38">0</strong><span>Expert coaches</span></div>
+        <div class="qstat"><strong data-stat data-target="24" data-suffix="/7">0</strong><span>Always open</span></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-line-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Calisthenics</span><span class="dot">/</span>
+      <span>Fat Loss</span><span class="dot">/</span>
+      <span>Muscle Gain</span><span class="dot">/</span>
+      <span>Powerlifting</span><span class="dot">/</span>
+      <span>HIIT</span><span class="dot">/</span>
+      <span>Mobility</span><span class="dot">/</span>
+      <span>Calisthenics</span><span class="dot">/</span>
+      <span>Fat Loss</span><span class="dot">/</span>
+      <span>Muscle Gain</span><span class="dot">/</span>
+      <span>Powerlifting</span><span class="dot">/</span>
+      <span>HIIT</span><span class="dot">/</span>
+      <span>Mobility</span><span class="dot">/</span>
+    </div>
+  </div>
+
+  <!-- ========== PROGRAMS / CATEGORIES (horizontal rail) ========== -->
+  <section class="programs" id="programs">
+    <div class="section-head">
+      <span class="kicker">01 — Training Programs</span>
+      <h2 class="section-title reveal-text">
+        Pick your path. We <em>build</em> the rest around you.
+      </h2>
+      <p class="section-lede reveal-up">Every member starts with a free assessment, then a coach maps a plan to your goal. Drag, scroll or arrow through.</p>
+    </div>
+
+    <div class="prog-rail" data-rail>
+      <div class="prog-track" data-rail-track>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#c6ff3a">
+          <div class="prog-no">P-01</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80" alt="Calisthenics training" loading="lazy" /></div>
+          <h3 class="prog-name">Calisthenics</h3>
+          <p class="prog-desc">Master your own bodyweight — pull-ups, muscle-ups, levers and handstands. Build raw control and aesthetic strength on our dedicated rig.</p>
+          <ul class="prog-tags"><li>Bodyweight</li><li>Mobility</li><li>Skill</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#ff5e3a">
+          <div class="prog-no">P-02</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80" alt="Fat loss conditioning" loading="lazy" /></div>
+          <h3 class="prog-name">Fat Loss</h3>
+          <p class="prog-desc">Burn fat without burning out. Metabolic conditioning, smart cardio and a nutrition plan that actually fits your life. Track every kilo.</p>
+          <ul class="prog-tags"><li>Conditioning</li><li>Nutrition</li><li>Cardio</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#3ad0ff">
+          <div class="prog-no">P-03</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?auto=format&fit=crop&w=700&q=80" alt="Muscle gain training" loading="lazy" /></div>
+          <h3 class="prog-name">Muscle Gain</h3>
+          <p class="prog-desc">Hypertrophy done right. Progressive overload, periodised splits and recovery protocols engineered to pack on lean, dense muscle.</p>
+          <ul class="prog-tags"><li>Hypertrophy</li><li>Progression</li><li>Recovery</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#ffd23a">
+          <div class="prog-no">P-04</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=80" alt="Powerlifting" loading="lazy" /></div>
+          <h3 class="prog-name">Powerlifting</h3>
+          <p class="prog-desc">Squat, bench, deadlift — heavier, every week. Calibrated plates, competition bars and coaches who've stood on the platform themselves.</p>
+          <ul class="prog-tags"><li>Strength</li><li>Technique</li><li>1RM</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#b06bff">
+          <div class="prog-no">P-05</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=700&q=80" alt="HIIT and conditioning" loading="lazy" /></div>
+          <h3 class="prog-name">HIIT &amp; Conditioning</h3>
+          <p class="prog-desc">45-minute, coach-led group sessions that spike your heart rate and torch calories long after you leave. High energy, big community.</p>
+          <ul class="prog-tags"><li>Group</li><li>Cardio</li><li>Endurance</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+        <article class="prog-card" data-cursor="hover" style="--accent:#3affa3">
+          <div class="prog-no">P-06</div>
+          <div class="prog-img"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=700&q=80" alt="Mobility and yoga" loading="lazy" /></div>
+          <h3 class="prog-name">Mobility &amp; Yoga</h3>
+          <p class="prog-desc">Move pain-free and recover faster. Guided mobility flows and yoga that keep your joints healthy and your lifts deep.</p>
+          <ul class="prog-tags"><li>Flexibility</li><li>Recovery</li><li>Balance</li></ul>
+          <span class="prog-link">View program →</span>
+        </article>
+
+      </div>
+      <div class="prog-progress"><div class="prog-progress-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- ========== EQUIPMENT / ACCESSORIES ========== -->
+  <section class="equip" id="equipment">
+    <div class="section-head">
+      <span class="kicker">02 — The Floor</span>
+      <h2 class="section-title reveal-text">
+        Every machine, rack and accessory you'll <em>ever</em> need.
+      </h2>
+      <p class="section-lede reveal-up">3,000+ sq.ft of premium kit — replaced and serviced on a schedule, never out of order.</p>
+    </div>
+
+    <div class="equip-grid">
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Free weights</span>
+        <h3>Dumbbells &amp; Barbells</h3>
+        <p>5–60 kg dumbbell range, Olympic &amp; competition bars, calibrated bumper plates.</p>
+      </div>
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Strength</span>
+        <h3>Squat &amp; Power Racks</h3>
+        <p>8 commercial racks, Smith machines and a dedicated deadlift platform zone.</p>
+      </div>
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Machines</span>
+        <h3>Resistance Selectorised</h3>
+        <p>Full pin-loaded circuit — leg press, lat pulldown, cable crossover &amp; more.</p>
+      </div>
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Cardio</span>
+        <h3>Cardio Zone</h3>
+        <p>Treadmills, rowers, air bikes, stair-climbers &amp; ski-ergs with screen integration.</p>
+      </div>
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Functional</span>
+        <h3>Rig &amp; Turf</h3>
+        <p>Calisthenics rig, sled track, battle ropes, kettlebells, plyo boxes &amp; medicine balls.</p>
+      </div>
+      <div class="equip-card reveal-up" data-cursor="hover">
+        <span class="equip-tag">Recovery</span>
+        <h3>Recovery Suite</h3>
+        <p>Infrared sauna, massage guns, foam-rolling bay and stretch-assist area.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US / BENEFITS ========== -->
+  <section class="why" id="why">
+    <div class="section-head centered">
+      <span class="kicker">03 — Why PULSE</span>
+      <h2 class="section-title reveal-text">More than a gym. A system built to <em>get you results</em>.</h2>
+    </div>
+
+    <div class="why-grid">
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">01</span>
+        <h3>Certified coaches</h3>
+        <p>Every trainer is degree-qualified or internationally certified — not a commission-chasing salesperson.</p>
+      </article>
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">02</span>
+        <h3>Personalised plans</h3>
+        <p>Your program is built around your body, schedule and goal — and adjusted every four weeks.</p>
+      </article>
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">03</span>
+        <h3>Open 24 / 7</h3>
+        <p>Secure fob access around the clock. Train at 5am or midnight — the iron never sleeps.</p>
+      </article>
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">04</span>
+        <h3>Nutrition guidance</h3>
+        <p>Macro coaching and meal frameworks that work in the real world — no crash diets.</p>
+      </article>
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">05</span>
+        <h3>Real community</h3>
+        <p>Group classes, challenges and a member app that keeps you accountable and motivated.</p>
+      </article>
+      <article class="benefit reveal-up" data-cursor="hover">
+        <span class="benefit-num">06</span>
+        <h3>Progress tracking</h3>
+        <p>InBody scans, lift logs and monthly check-ins so you can see the change in numbers.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== COACHES ========== -->
+  <section class="coaches" id="coaches">
+    <div class="section-head">
+      <span class="kicker">04 — The Coaches</span>
+      <h2 class="section-title reveal-text">The people in your <em>corner</em>.</h2>
+    </div>
+
+    <div class="coach-grid">
+      <figure class="coach reveal-up" data-cursor="hover">
+        <div class="coach-img"><img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80" alt="Strength coach" loading="lazy" /></div>
+        <figcaption><strong>Marcus Vale</strong><span>Head Strength Coach · Powerlifting</span></figcaption>
+      </figure>
+      <figure class="coach reveal-up" data-cursor="hover">
+        <div class="coach-img"><img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80" alt="Calisthenics coach" loading="lazy" /></div>
+        <figcaption><strong>Aria Nakamura</strong><span>Calisthenics &amp; Mobility</span></figcaption>
+      </figure>
+      <figure class="coach reveal-up" data-cursor="hover">
+        <div class="coach-img"><img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=80" alt="Conditioning coach" loading="lazy" /></div>
+        <figcaption><strong>Diego Santos</strong><span>HIIT &amp; Conditioning</span></figcaption>
+      </figure>
+      <figure class="coach reveal-up" data-cursor="hover">
+        <div class="coach-img"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=700&q=80" alt="Nutrition coach" loading="lazy" /></div>
+        <figcaption><strong>Leah Brooks</strong><span>Nutrition &amp; Fat Loss</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========== STATS BANNER ========== -->
+  <section class="statsband">
+    <div class="stat" data-stat data-target="4200" data-suffix="+">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Transformations<br/>and counting</span>
+    </div>
+    <div class="stat" data-stat data-target="60" data-suffix="+">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Pieces of<br/>premium kit</span>
+    </div>
+    <div class="stat" data-stat data-target="38">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Certified<br/>coaches</span>
+    </div>
+    <div class="stat" data-stat data-target="12" data-suffix="k">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Classes run<br/>this year</span>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery">
+    <div class="section-head">
+      <span class="kicker">05 — Inside the Box</span>
+      <h2 class="section-title reveal-text">Where the <em>work</em> happens.</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item g1" data-cursor="hover"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Gym floor" loading="lazy" /></figure>
+      <figure class="g-item g2" data-cursor="hover"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80" alt="Weights" loading="lazy" /></figure>
+      <figure class="g-item g3" data-cursor="hover"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Training" loading="lazy" /></figure>
+      <figure class="g-item g4" data-cursor="hover"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Kettlebells" loading="lazy" /></figure>
+      <figure class="g-item g5" data-cursor="hover"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=80" alt="Cardio zone" loading="lazy" /></figure>
+      <figure class="g-item g6" data-cursor="hover"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=900&q=80" alt="Functional training area" loading="lazy" /></figure>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="pricing">
+    <div class="section-head centered">
+      <span class="kicker">06 — Membership</span>
+      <h2 class="section-title reveal-text">Simple plans. <em>No</em> lock-in tricks.</h2>
+      <p class="section-lede reveal-up">First session is always free. Cancel anytime after your first month.</p>
+    </div>
+
+    <div class="plan-grid">
+      <article class="plan reveal-up" data-cursor="hover">
+        <h3 class="plan-name">Starter</h3>
+        <div class="plan-price"><span class="cur">$</span>xx<span class="per">/mo</span></div>
+        <p class="plan-sub">Train on your own terms.</p>
+        <ul class="plan-feats">
+          <li>Full floor &amp; cardio access</li>
+          <li>24/7 entry</li>
+          <li>Member app &amp; lift logs</li>
+          <li>1 InBody scan / month</li>
+        </ul>
+        <a href="#visit" class="btn btn-ghost btn-block" data-cursor="hover"><span>Choose Starter</span></a>
+      </article>
+
+      <article class="plan plan-featured reveal-up" data-cursor="hover">
+        <span class="plan-badge">Most popular</span>
+        <h3 class="plan-name">Performance</h3>
+        <div class="plan-price"><span class="cur">$</span>xx<span class="per">/mo</span></div>
+        <p class="plan-sub">Coaching that gets results.</p>
+        <ul class="plan-feats">
+          <li>Everything in Starter</li>
+          <li>Personalised program</li>
+          <li>Unlimited group classes</li>
+          <li>Monthly coach check-in</li>
+          <li>Nutrition framework</li>
+        </ul>
+        <a href="#visit" class="btn btn-primary btn-block" data-cursor="hover"><span>Choose Performance</span></a>
+      </article>
+
+      <article class="plan reveal-up" data-cursor="hover">
+        <h3 class="plan-name">Elite 1:1</h3>
+        <div class="plan-price"><span class="cur">$</span>xx<span class="per">/mo</span></div>
+        <p class="plan-sub">A coach in your corner.</p>
+        <ul class="plan-feats">
+          <li>Everything in Performance</li>
+          <li>2 private PT sessions / week</li>
+          <li>Custom macro plan</li>
+          <li>Recovery suite access</li>
+          <li>Priority class booking</li>
+        </ul>
+        <a href="#visit" class="btn btn-ghost btn-block" data-cursor="hover"><span>Choose Elite</span></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="voices">
+    <div class="section-head centered">
+      <span class="kicker">07 — Results</span>
+      <h2 class="section-title reveal-text">What members say after the <em>first 90 days</em>.</h2>
+    </div>
+    <div class="voices-grid">
+      <blockquote class="voice reveal-up" data-cursor="hover">
+        <p>"Down 14kg and pulling my first muscle-up. The coaches actually program for you — it's nothing like the big chains."</p>
+        <footer><span>Priya M.</span><em>Member · 8 months</em></footer>
+      </blockquote>
+      <blockquote class="voice reveal-up" data-cursor="hover">
+        <p>"Added 40kg to my squat in a single block. The platform setup and the powerlifting coaching are world class."</p>
+        <footer><span>Sam O.</span><em>Member · 1 year</em></footer>
+      </blockquote>
+      <blockquote class="voice reveal-up" data-cursor="hover">
+        <p>"The 24/7 access changed everything for my shift work. Clean, never crowded, and the community keeps me showing up."</p>
+        <footer><span>Hannah R.</span><em>Member · 6 months</em></footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ========== VISIT / LOCATION ========== -->
+  <section class="visit" id="visit">
+    <div class="visit-grid">
+      <div class="visit-copy">
+        <span class="kicker">08 — Visit</span>
+        <h2 class="section-title reveal-text">Your first session is <em>free</em>.</h2>
+        <p class="reveal-up">Walk in for a tour, or book a free assessment online. We'll show you the floor, talk through your goals and map your first month — no pressure, no contracts.</p>
+
+        <div class="visit-info">
+          <div><span>Address</span><em>[Street Address], [Area], [City] — [PIN]</em></div>
+          <div><span>Hours</span><em>Open 24 / 7 · Staffed 6:00 — 22:00</em></div>
+          <div><span>Phone</span><em>+91 [your phone number]</em></div>
+          <div><span>Email</span><em>hello@pulsegym.com</em></div>
+        </div>
+
+        <div class="visit-map" data-cursor="hover">
+          <iframe
+            title="Gym location map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=80.20%2C13.02%2C80.30%2C13.10&amp;layer=mapnik"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <span class="map-pin"></span>
+        </div>
+      </div>
+
+      <form class="visit-form" onsubmit="event.preventDefault(); this.querySelector('.form-success').classList.add('on');">
+        <h3 class="form-title">Book your free session</h3>
+        <div class="field"><label>Name</label><input type="text" placeholder="Your full name" required /></div>
+        <div class="field"><label>Phone</label><input type="tel" placeholder="+91" required /></div>
+        <div class="field"><label>Your main goal</label>
+          <select required>
+            <option value="">Select a goal…</option>
+            <option>Calisthenics</option>
+            <option>Fat loss</option>
+            <option>Muscle gain</option>
+            <option>Powerlifting / strength</option>
+            <option>HIIT &amp; conditioning</option>
+            <option>Mobility / general fitness</option>
+          </select>
+        </div>
+        <div class="field"><label>Preferred plan</label>
+          <select required>
+            <option>Starter — $xx/mo</option>
+            <option>Performance — $xx/mo</option>
+            <option>Elite 1:1 — $xx/mo</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-cursor="hover">
+          <span>Claim free session</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form-success">You're in! A coach will call within 24 hours to lock in your free session.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-cta">
+      <h2 class="reveal-text">Ready to <em>start</em>?</h2>
+      <a href="#pricing" class="btn btn-primary" data-cursor="hover">
+        <span>Join PULSE today</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">PULSE</div>
+        <p>Strength &amp; Conditioning. A high-performance training floor built for real transformation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p>[Street Address],<br/>[Area], [City] — [PIN]</p>
+        <p>Open 24 / 7</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>+91 [your phone number]</p>
+        <p>hello@pulsegym.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul class="socials">
+          <li><a href="#" data-cursor="hover">Instagram</a></li>
+          <li><a href="#" data-cursor="hover">YouTube</a></li>
+          <li><a href="#" data-cursor="hover">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <span>© PULSE 2026 — A sample template.</span>
+      <span>Designed &amp; built by <a href="#" data-cursor="hover">your studio name</a></span>
+    </div>
+  </footer>
+
+  <!-- ========== LIBRARIES ========== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/three-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
